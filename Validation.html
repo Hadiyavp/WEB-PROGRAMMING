@@ -1,0 +1,77 @@
+  <!DOCTYPE html>
+    <html>
+    <head><title>Validation</title>
+    </head>
+    <body Bgcolor="#b98a6d"><h2><center><u><font color="#535141">REGISTRATION FORM</center></u></h2></font>
+    <form id="registration-form" method="post" onsubmit="return validateForm()"><fieldset><legend>Personal Informations</legend>
+    <label>NAME:<br></label>
+    <input type="text" id="name" name="name"><br><br>
+    <label>GENDER:<br></label>
+    <input type="radio" id="male">MALE
+    <input type="radio" id="female">FEMALE
+     <input type="radio" id="other">OTHER<br><br>
+     <label>DATE OF BIRTH:<br></label>  
+     <input type="date" id="date" size="25" maxlength="25"><br>
+    <label>ADDRESS:<br></label>        
+    <textarea cols="30" rows="4" value="address" id="address">  </textarea> <br>
+    <label>ADD IMAGE:<br></label>
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <label>E-MAIL:<br></label>
+    <input type="email" id="email" name="email"><br><br>
+    <label>PHONE NUMBER:<br></label>
+    <input type="number" id="phone" name="phone"><br><br>
+    <label>CREATE PASSWORD:<br>
+    <input type="password" id="password"name="password"><br><br>
+    CONFIRM PASSWORD:<br>
+    <input type="password" id="confirm-password" name="confirm-password"></fieldset>
+    <center>
+    <input type="submit" name="Submit">
+    </center>
+    </form>
+    <script>
+    function validateForm() {
+    var name = document.getElementById("name").value;
+    var date=document.getElementById("date").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirm-password").value;
+    var errorMessage = "";
+    var fileName=document.getElementById("myfile").value;
+  var file_extension=fileName.split(".").pop();
+  var address = document.getElementById("address").value;
+     
+    if(name==""){
+    errorMessage+="Name is required.\n";
+    }
+    if(date=="")
+  {
+  alert("Select date");
+  }
+    if(phone==""){
+    errorMessage+="Phone Number is required.\n";
+    }
+    if(email==""){
+    errorMessage+="Email is required.\n";
+    }
+    
+    if(password=="") {
+    errorMessage+="Password is required.\n";
+    }
+    if(password!=confirmPassword) {
+    errorMessage+="Passwords do not match.\n";
+    }
+    if(errorMessage!="") {
+    alert(errorMessage);
+    }  
+    if(file_extension=="")
+  {
+  alert("Upload photo");
+  }  
+  if(address==""){
+     alert("Enter address");
+    }
+    }
+    </script>
+    </body>
+    </html>
